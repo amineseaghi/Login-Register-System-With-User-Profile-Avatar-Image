@@ -2,6 +2,8 @@
 
 @include 'config.php';
 
+session_start();
+
 if(isset($_POST['submit'])){
 
     $name = mysqli_real_escape_string($conn, $_POST['name']);
@@ -55,7 +57,7 @@ if(isset($_POST['submit'])){
     
 
     <div class="form-container">
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="register.php" method="post" enctype="multipart/form-data">
             <h3>Register Now</h3>
             <?php
             if(isset($message)){
