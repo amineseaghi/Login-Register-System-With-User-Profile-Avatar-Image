@@ -12,8 +12,8 @@ if(isset($_POST['submit'])){
     $cpass = mysqli_real_escape_string($conn, md5($_POST['cpassword']));
     $image = $_FILES['image'];
     $image_size = $_FILES['image']['size'];
-    $image_tmp_name = $_FILES['tmp_name'];
-    $image_folder = 'uploaded_img/'.$image;
+    $image_tmp_name = $_FILES['image']['tmp_name'];
+    $image_folder = 'uploaded_img/'.$image['name'];
     
     $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE email = '$email' AND 
     password = '$pass'") or die('query faild');
